@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -34,7 +35,18 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json("hello");
+        $create = Contact::create([
+            'name' =>$request->name,
+            'email' =>$request->email,
+            'mobile' =>$request->mobile
+        ]);
+        if($create){
+            return response()->json(['status'=>200]);
+        }else{
+
+        }
+
+        return response()->json(['status'=>500]);
     }
 
     /**

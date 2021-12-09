@@ -5393,9 +5393,19 @@ var AddContact = /*#__PURE__*/function (_React$Component) {
 
               case 3:
                 res = _context.sent;
-                console.log(res);
 
-              case 5:
+                _this.setState({
+                  name: '',
+                  email: '',
+                  mobile: '',
+                  phone: ''
+                });
+
+                if (res.data.status === 200) {
+                  _this.props.hooks.push("/");
+                }
+
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -5414,61 +5424,63 @@ var AddContact = /*#__PURE__*/function (_React$Component) {
   _createClass(AddContact, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-        onSubmit: this.saveContact,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          "class": "form-group",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            className: "col-form-label mt-4",
-            "for": "inputDefault",
-            children: "Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-            type: "text",
-            className: "form-control",
-            placeholder: "Default input",
-            name: "name",
-            value: this.state.name,
-            onChange: this.handleInput,
-            required: true
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          "class": "form-group",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            className: "col-form-label mt-4",
-            "for": "inputDefault",
-            children: "Email"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-            type: "email",
-            className: "form-control",
-            placeholder: "Default input",
-            name: "email",
-            value: this.state.email,
-            onChange: this.handleInput,
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            "class": "form-group",
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+          onSubmit: this.saveContact,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
               className: "col-form-label mt-4",
               "for": "inputDefault",
-              children: "Mobile no"
+              children: "Name"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
               type: "text",
               className: "form-control",
               placeholder: "Default input",
-              name: "mobile",
-              value: this.state.mobile,
+              name: "name",
+              value: this.state.name,
               onChange: this.handleInput,
               required: true
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            "class": "form-group",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-              type: "submit",
-              value: "Create",
-              className: "btn btn-success"
-            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              className: "col-form-label mt-4",
+              "for": "inputDefault",
+              children: "Email"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+              type: "email",
+              className: "form-control",
+              placeholder: "Default input",
+              name: "email",
+              value: this.state.email,
+              onChange: this.handleInput,
+              required: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "form-group",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                className: "col-form-label mt-4",
+                "for": "inputDefault",
+                children: "Mobile no"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                type: "text",
+                className: "form-control",
+                placeholder: "Default input",
+                name: "mobile",
+                value: this.state.mobile,
+                onChange: this.handleInput,
+                required: true
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                type: "submit",
+                value: "Create",
+                className: "btn btn-success"
+              })
+            })]
           })]
-        })]
+        })
       });
     }
   }]);
